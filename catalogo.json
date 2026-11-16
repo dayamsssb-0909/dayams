@@ -63,7 +63,8 @@
       "wholesale": 35,
       "stock": 12,
       "sizes": "S, M, L",
-      "colors": "Rosa empolvado, Negro",
+      "colors": "vino, café ",
+      "color_hexes": "#793850, #9c715a",
       "description": "Una silueta femenina para cada ocasión.",
       "image": "/images/mwisoonz-qfqj3z5y.png"
     },
