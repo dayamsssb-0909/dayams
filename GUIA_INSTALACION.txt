@@ -1,0 +1,64 @@
+DAYAMS BOUTIQUE · L’ATELIER · INSTRUCCIONES DE INSTALACIÓN
+========================================================
+
+Este paquete mantiene GitHub + Pages CMS como sistema de edición de fotografías,
+prendas, precios, tallas, colores y textos. Los cambios quedan en GitHub.
+No almacena fotos en el navegador ni precisa una base de datos de productos.
+
+ARCHIVOS PARA SUBIR AL REPOSITORIO (7):
+  index.html       Página pública
+  dayams.css       Presentación y animaciones
+  dayams.js        Carrito, navegación, filtros, interacciones
+  catalogo.json    Productos y textos (se edita desde Pages CMS)
+  .pages.yml       Configuración del editor visual y fotos
+  .nojekyll        Publicación estática
+  GUIA_INSTALACION.txt  Estas instrucciones
+
+VISTA PREVIA:
+  El archivo DAYAMS_VISTA_PREVIA_INTERACTIVA.html se entrega por separado.
+  Abre ese archivo con doble clic en Chrome/Edge. Todo el sitio funciona en
+  modo de demostración, incluso la animación de entrada y los filtros.
+  También hay un botón 'Ver presentación' en el pie para repetir la apertura.
+  La vista previa contiene datos de ejemplo; no modifica el repositorio.
+
+AL CREAR LA CUENTA DEFINITIVA DE DAYAMS:
+  1. Crear GitHub con el correo de la boutique y escoger un nombre de usuario
+     comercial (por ejemplo dayams06, sujeto a disponibilidad).
+  2. Crear el repositorio `dayams` como público.
+  3. Subir los 7 archivos extraídos a la RAÍZ; NO subir el ZIP comprimido.
+  4. Abrir app.pagescms.org, iniciar con GitHub, autorizar el repositorio,
+     y abrir el elemento 'Tienda DAYAMS'.
+  5. En 'Prendas y fotografías', cargar fotos JPG/WEBP y editar productos.
+     En 'Datos de la tienda' configurar WhatsApp y textos.
+  6. En 'Paleta de colores editable' introducir nombre + #HEX.
+     En cada prenda hay un campo opcional 'Colores exactos por prenda':
+     escriba #D9A0B7, #29252A para los colores de esa prenda en el mismo
+     orden que el campo de nombres. Si se deja en blanco, toma la paleta.
+  7. Guardar. Pages CMS almacena imágenes en /images y modifica catalogo.json.
+  8. Conectar el repositorio a un hosting compatible con uso comercial,
+     por ejemplo Netlify mediante importación desde GitHub. GitHub Pages
+     resulta útil para pruebas, pero NO debe usarse como alojamiento comercial.
+     Las publicaciones futuras se actualizarán automáticamente al guardar.
+
+NOTAS IMPORTANTES ANTES DE VENDER:
+- Reemplaza todos los 6 productos de ejemplo; no publiques fotografías que no sean tuyas.
+- Verifica WhatsApp, redes sociales, precios, tallas, tonalidades y unidades reales.
+- Mantén el aviso de demostración encendido hasta cargar el catálogo real.
+- El stock del catálogo es total y referencial, NO se reserva entre clientas.
+- El pago mediante Yape se coordina y verifica MANUALMENTE por WhatsApp.
+- Los costos de envío se confirman antes del pago.
+- Completa los datos fiscales/atención y enlaces legales aplicables al negocio.
+- Publica reseñas solamente si son reales y con autorización.
+- No pidas contraseñas ni tokens de GitHub a tus clientas.
+- No borres el catálogo original sin guardar un respaldo.
+- El diseño respeta la preferencia del sistema de reducir movimiento.
+- La animación inicial se muestra una vez por sesión y se puede omitir.
+
+Esta es una tienda estática avanzada, no una pasarela de pago ni un sistema
+transaccional con sincronización de inventario entre clientas.
+
+
+PRECIO POR MAYOR:
+- En cada prenda puedes editar el campo “Precio por mayor”.
+- Si escribes 0, ese producto ya no mostrará precio por mayor.
+- En “Datos de la tienda” puedes apagar por completo la función.

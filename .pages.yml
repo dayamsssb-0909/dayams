@@ -1,0 +1,223 @@
+# Panel visual: https://app.pagescms.org
+# Los cambios se guardan en GitHub y GitHub Pages vuelve a publicar el sitio.
+media:
+  input: images
+  output: /images
+  rename: random
+  extensions: [jpg, jpeg, png, webp, avif]
+content:
+  - name: tienda
+    label: Tienda DAYAMS
+    type: file
+    path: catalogo.json
+    format: json
+    fields:
+      - name: settings
+        label: Datos de la tienda
+        type: object
+        fields:
+          - name: brand
+            label: Nombre de la tienda
+            type: string
+            required: true
+          - name: whatsapp
+            label: WhatsApp de pedidos (ej. 51984120560)
+            type: string
+            required: true
+          - name: demo
+            label: Mostrar aviso de catálogo de demostración
+            type: boolean
+          - name: announcement
+            label: Franja superior
+            type: string
+          - name: hero_label
+            label: Etiqueta de portada
+            type: string
+          - name: hero_title
+            label: Título de portada
+            type: string
+          - name: hero_subtitle
+            label: Subtítulo de portada
+            type: text
+          - name: hero_image
+            label: Imagen grande de portada (opcional)
+            type: image
+          - name: welcome_line
+            label: Frase de bienvenida de la presentación inicial
+            type: string
+          - name: editorial_title
+            label: Frase del manifiesto de moda
+            type: string
+          - name: color_palette
+            label: Paleta de colores editable (nombre y código HEX)
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{name}"
+            fields:
+              - name: name
+                label: Nombre del color
+                type: string
+              - name: hex
+                label: Color hexadecimal (ej. #D9A0B7)
+                type: string
+          - name: catalog_subtitle
+            label: Texto de colección
+            type: string
+          - name: ticker
+            label: Frase animada
+            type: string
+          - name: about
+            label: Descripción de DAYAMS
+            type: text
+          - name: footer
+            label: Texto de pie de página
+            type: text
+          - name: instagram
+            label: Enlace de Instagram
+            type: string
+          - name: tiktok
+            label: Enlace de TikTok
+            type: string
+          - name: facebook
+            label: Enlace de Facebook
+            type: string
+          - name: business_name
+            label: Razón social (si corresponde)
+            type: string
+          - name: ruc
+            label: RUC (si corresponde)
+            type: string
+          - name: service_email
+            label: Correo de atención al cliente
+            type: string
+          - name: service_address
+            label: Dirección de atención (si corresponde)
+            type: text
+          - name: complaints_url
+            label: Enlace al Libro de Reclamaciones virtual
+            type: string
+          - name: privacy_url
+            label: Enlace a Política de privacidad (si dispone de ella)
+            type: string
+          - name: terms_url
+            label: Enlace a Términos y condiciones (si dispone de ellos)
+            type: string
+          - name: wholesale_enabled
+            label: Activar precio por mayor
+            type: boolean
+            description: "Si lo apagas, no se mostrará ningún precio por mayor al público."
+          - name: wholesale_min
+            label: Número mínimo de prendas para precio por mayor
+            type: number
+            description: "Ejemplo: 4. Desde esta cantidad total en la bolsa se activa el precio por mayor."
+      - name: products
+        label: Prendas y fotografías
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        fields:
+          - name: id
+            label: Identificador automático (no modificar)
+            type: uuid
+            options:
+              editable: false
+          - name: name
+            label: Nombre de la prenda
+            type: string
+            required: true
+          - name: active
+            label: Mostrar en la tienda
+            type: boolean
+          - name: category
+            label: Categoría (Vestidos, Blusas, etc.)
+            type: string
+            required: true
+          - name: badge
+            label: Etiqueta (Nuevo, Favorito...)
+            type: string
+          - name: price
+            label: Precio en soles
+            type: number
+            required: true
+          - name: wholesale
+            label: Precio por mayor (0 para desactivar)
+            type: number
+            description: "Puedes cambiarlo cuando quieras. Si pones 0, la tienda ocultará el precio por mayor de esa prenda."
+          - name: stock
+            label: Unidades disponibles (total entre todas las tallas)
+            type: number
+            required: true
+          - name: sizes
+            label: Tallas separadas por coma (ej. S, M, L)
+            type: string
+            required: true
+          - name: colors
+            label: Colores separados por coma (ej. Negro, Beige)
+            type: string
+            required: true
+          - name: color_hexes
+            label: Colores exactos por prenda (HEX separados por coma, mismo orden que los nombres; opcional)
+            type: string
+            description: "Ejemplo: #D9A0B7, #29252A. Si queda vacío, se usan los tonos de la paleta general."
+          - name: description
+            label: Descripción
+            type: text
+          - name: material
+            label: Material / tela (opcional)
+            type: string
+          - name: care
+            label: Indicaciones de cuidado (opcional)
+            type: text
+          - name: image
+            label: Foto principal (subir o elegir)
+            type: image
+            options:
+              extensions: [jpg, jpeg, png, webp, avif]
+              rename: random
+          - name: gallery
+            label: Fotos adicionales (opcional)
+            type: image
+            options:
+              multiple:
+                max: 5
+              unique: true
+              rename: random
+              extensions: [jpg, jpeg, png, webp, avif]
+      - name: faq
+        label: Preguntas frecuentes
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{question}"
+        fields:
+          - name: question
+            label: Pregunta
+            type: string
+          - name: answer
+            label: Respuesta
+            type: text
+      - name: reviews
+        label: Reseñas autorizadas
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        fields:
+          - name: name
+            label: Nombre público
+            type: string
+          - name: text
+            label: Reseña real (con permiso de publicación)
+            type: text
+          - name: rating
+            label: Estrellas otorgadas (1 a 5, opcional)
+            type: number
+          - name: published
+            label: Mostrar en la tienda
+            type: boolean
